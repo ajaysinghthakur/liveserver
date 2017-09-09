@@ -50,6 +50,10 @@ io.on('connection', function(socket) {
     io.to(roomKey).emit('upvote')
   })
 
+  socket.on('joinded',function(roomKey){
+    console.log('join room:', roomKey)
+    io.to(roomKey).emit('joined')
+  })
 
   socket.on('gift', function(data) {
     console.log('gift:', data)
