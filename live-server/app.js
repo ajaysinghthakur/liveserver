@@ -42,7 +42,7 @@ io.on('connection', function(socket) {
   socket.on('join_room', function(roomKey) {
     console.log('join room:', roomKey)
     socket.join(roomKey)
-    io.to(roomKey).emit('joined')
+    io.to(roomKey).emit('joined',roomKey);
   })
 
   socket.on('upvote', function(roomKey) {
@@ -50,10 +50,10 @@ io.on('connection', function(socket) {
     io.to(roomKey).emit('upvote')
   })
 
-  socket.on('joined',function(roomKey){
-    console.log('join room:', roomKey)
-    io.to(roomKey).emit('joined')
-  })
+  // socket.on('joined',function(roomKey){
+  //   console.log('join room:', roomKey)
+  //   io.to(roomKey).emit('joined',roomKey)
+  // })
 
   socket.on('gift', function(data) {
     console.log('gift:', data)
