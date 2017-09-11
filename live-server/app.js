@@ -31,6 +31,8 @@ io.on('connection', function(socket) {
     delete rooms[roomKey]
   })
 
+  
+
   socket.on('disconnect', function() {
     console.log('disconnect:', socket.roomKey)
     if (socket.roomKey) {
