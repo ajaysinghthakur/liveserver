@@ -72,6 +72,9 @@ io.on('connection', function(socket) {
     io.to(data.roomKey).emit('location',data);
   })
   
+  
+
+  
 })
 
 console.log('listening on port 3000...')
